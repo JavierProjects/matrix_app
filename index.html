@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#101718">
+<title>El poder secreto de las matrices: mensajes cifrados, imágenes limpias y secretos visuales.</title>
+<style>
+:root{color-scheme:dark;--bg:#101617;--panel:#192021;--line:#323b3b;--soft:#a9b3af;--green:#c3f982;--cyan:#82dbca;--mono:ui-monospace,SFMono-Regular,Consolas,"Liberation Mono",monospace;font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#f2f5ef;background:var(--bg)}
+*{box-sizing:border-box}body{margin:0}button,textarea{font:inherit}button{cursor:pointer}button:focus-visible,textarea:focus-visible,summary:focus-visible{outline:2px solid var(--green);outline-offset:4px}button:disabled{cursor:default;opacity:.38}button{color:inherit}.wrap{max-width:1272px;margin:auto;padding:0 clamp(18px,5vw,72px)}header{border-bottom:1px solid var(--line);background:#131a1b}.top{min-height:79px;display:flex;align-items:center;gap:13px}.logo{width:41px;height:41px;background:var(--green);border-radius:10px;display:grid;place-items:center;color:#16251b;flex:none}.brand{font-size:17px;font-weight:690;letter-spacing:-.6px}.brand small{display:block;color:var(--soft);font-size:12px;font-weight:400;letter-spacing:.05px;margin-top:3px}.status{margin-left:auto;display:flex;align-items:center;gap:8px;font:11px var(--mono);color:#c5cdc7;white-space:nowrap}.status i{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 9px #b0ef6d66}.hero{margin:28px 0 30px;padding:32px clamp(22px,3vw,46px);position:relative;isolation:isolate;overflow:hidden;min-height:215px;border:1px solid #35463b;border-radius:16px;background:linear-gradient(103deg,#1b2621 8%,#1a2822 48%,#213726);display:flex;align-items:center;justify-content:space-between;gap:20px}.hero:before{content:"";position:absolute;inset:0;z-index:-1;background-image:linear-gradient(#93d99a14 1px,transparent 1px),linear-gradient(90deg,#93d99a14 1px,transparent 1px);background-size:22px 22px;mask-image:linear-gradient(90deg,transparent,#000 82%)}.kicker,.label{font:600 10px/1.4 var(--mono);letter-spacing:1.55px;text-transform:uppercase}.kicker{display:flex;align-items:center;gap:9px;color:var(--green)}.kicker:before{content:"";width:21px;height:2px;background:var(--green)}h1{font-size:clamp(40px,5.1vw,76px);line-height:1.02;margin:14px 0 12px;letter-spacing:-.066em;font-weight:650}h1 span{color:var(--green)}.hero p{margin:0;font-size:15px;line-height:1.6;color:#bdc9bf;max-width:480px}.art{width:32%;max-width:290px;min-width:188px;flex:none;display:block}.section-head,.card-head,.actions,.subhead,.nav,.section-title{display:flex;align-items:center}.section-head{justify-content:space-between;gap:12px;margin-bottom:15px}.section-title{gap:12px}h2,h3,p{margin:0}h2{font-size:24px;letter-spacing:-1.05px;font-weight:620}.number{font:12px var(--mono);color:var(--green);background:#222e24;border:1px solid #3a4b37;border-radius:5px;padding:5px 7px}.btn,.iconbtn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:#202829;border:1px solid #3e4948;border-radius:7px;min-height:36px;padding:8px 12px;font-size:13px;font-weight:550}.btn:hover:not(:disabled),.iconbtn:hover:not(:disabled){border-color:#83948a;background:#2a3431}.ic{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.65;stroke-linecap:round;stroke-linejoin:round}.cards{display:grid;grid-template-columns:1fr 1fr;gap:18px}.card,.explorer{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:22px}.card{min-width:0;display:flex;flex-direction:column}.card-head{gap:11px;margin-bottom:18px}.card-head h3{font-size:19px;letter-spacing:-.55px;font-weight:600}.badge-icon{border:1px solid #40513c;color:var(--green);background:#273327;border-radius:8px;width:35px;height:35px;display:grid;place-items:center}.out .badge-icon{color:var(--cyan);background:#203530;border-color:#344e48}.field,.cipher-box{background:#101718;border:1px solid #394443;border-radius:8px;padding:14px}.field:focus-within{border-color:var(--green)}textarea{background:none;color:#f1f5ee;border:none;width:100%;height:61px;resize:vertical;outline:none!important;font:18px/1.45 var(--mono);display:block;padding:0}textarea::placeholder{color:#83918c}.meta{font:11px var(--mono);color:#a8b4ad}.count{text-align:right;margin-top:4px}.actions{gap:10px;margin-top:16px;flex-wrap:wrap}.primary{background:var(--green);border-color:var(--green);color:#182116}.primary:hover:not(:disabled){background:#d1ffa0;border-color:#d1ffa0}.quiet{border:0;background:none;color:#bdc6c0}.cipher-box{background:#111c1b;border-color:#334642;min-height:108px;display:flex;flex-direction:column;justify-content:space-between;gap:16px;flex:1}.cipher{color:var(--cyan);font:600 22px/1.45 var(--mono);letter-spacing:2px;white-space:pre-wrap;overflow-wrap:anywhere;max-height:180px;overflow:auto}.recovered,.warning{margin-top:14px;line-height:1.6;overflow-wrap:anywhere}.recovered strong{font:15px var(--mono);white-space:pre-wrap}.warning{color:#ffd59e;font-size:13px}.explorer{margin:22px 0 36px;padding:0}.subhead{padding:19px 22px;justify-content:space-between;column-gap:14px;row-gap:12px;flex-wrap:wrap;border-bottom:1px solid var(--line)}.subhead p{color:var(--soft);font-size:13px;margin:5px 0 0}.nav{gap:11px;font:12px var(--mono);color:#d7dfd7}.iconbtn{padding:6px;min-height:30px;width:30px}.stages{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));padding:22px 0}.stage{padding:0 22px}.stage+.stage{border-left:1px solid var(--line)}.label{color:#aebbb3;letter-spacing:1px}.label b{color:var(--green);margin-right:5px}.tokens{display:flex;gap:7px;margin:14px 0 10px}.token{display:grid;place-items:center;background:#222d28;border:1px solid #405044;border-radius:5px;min-width:32px;height:34px;font:17px var(--mono);color:var(--green)}.out-tokens .token{color:var(--cyan);background:#1c302d;border-color:#354f49}.math{color:#c6d2ca;font:12px/1.65 var(--mono);overflow-wrap:anywhere}.stage p{font-size:13px;color:var(--soft);line-height:1.5}.formula{margin:12px 0 6px;color:#edf3e9;font:15px var(--mono)}details{border-top:1px solid var(--line);padding:13px 22px}summary{width:fit-content;font-size:13px;color:#bccac0;cursor:pointer}details p{font-size:14px;line-height:1.6;margin:12px 0;color:#c6d0ca}details pre{white-space:pre-wrap;font:14px/1.8 var(--mono);color:var(--cyan)}dialog{width:min(520px,92vw);color:#eff5ee;background:var(--panel);border:1px solid #455348;border-radius:14px;padding:24px}dialog::backdrop{background:#080e0edb}dialog p{color:var(--soft);line-height:1.5;font-size:14px}.alphabet{margin-top:16px;display:grid;grid-template-columns:repeat(6,1fr);gap:6px}.alphabet div{display:flex;flex-direction:column;align-items:center;background:#222c27;border-radius:5px;padding:7px;color:var(--green);font:16px var(--mono)}.alphabet small{font-size:10px;color:#b6c1bb;margin-top:5px}.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}[hidden]{display:none!important}
+@media(max-width:760px){.wrap{padding:0 18px}.hero{padding:24px;min-height:180px}.art{min-width:145px}.stage{padding:0 12px}.card{padding:16px}.actions{gap:5px}.brand small{max-width:300px}}
+@media(max-width:610px){.top{min-height:70px}.brand{font-size:15px}.brand small{max-width:240px;font-size:10px}.status{font-size:0;gap:0}.hero{margin:18px 0 22px;padding:22px 17px;gap:6px}.hero p{font-size:13px}.art{min-width:86px;width:24%}h1{font-size:40px}.kicker{font-size:9px}.cards,.stages{grid-template-columns:1fr}.stages{padding:0}.stage{padding:16px 20px}.stage+.stage{border-left:0;border-top:1px solid var(--line)}.section-title{gap:8px}h2{font-size:20px}.section-head .btn{font-size:12px;padding:7px 9px}.subhead{padding:16px}.nav{margin-left:auto}}
+.modes{display:inline-flex;gap:3px;padding:3px;margin:0 0 16px;border:1px solid var(--line);background:#101718;border-radius:9px}.modes button{background:transparent;border:0;border-radius:6px;color:var(--soft);padding:8px 18px;font-weight:600}.modes button[aria-pressed="true"]{background:#2c3b2d;color:var(--green)}.cipher-chunk{display:inline-block;margin-right:.65em}.cipher-chunk:last-child{margin-right:0}
+
+header .app-nav{display:flex;align-items:center;justify-content:flex-end;flex-wrap:wrap;gap:6px;margin-left:auto}
+header .app-nav a{display:inline-flex;align-items:center;min-height:34px;padding:6px 10px;border:1px solid #48584e;border-radius:7px;background:#202a26;color:#eaf2e9;text-decoration:none;font:550 13px/1.3 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+header .app-nav a:hover,header .app-nav a:focus-visible{border-color:#c3f982}
+header .app-nav .deck-return{background:#29392b;color:#c3f982}
+@media(max-width:850px){header .wrap{flex-wrap:wrap;padding-block:9px;row-gap:6px}header .app-nav{order:2;justify-content:flex-start;flex:1 0 100%;margin:0}header .app-nav a{font-size:12px}}
+</style>
+</head>
+<body>
+<svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden" xmlns="http://www.w3.org/2000/svg"><defs>
+<symbol id="grid" viewBox="0 0 24 24"><path d="M7 3H4v18h3m10-18h3v18h-3"/><path stroke-width="2.6" stroke-linecap="square" d="M9.5 7h.2m4.6 0h.2m-5 5h.2m4.6 0h.2m-5 5h.2m4.6 0h.2"/></symbol>
+<symbol id="write" viewBox="0 0 24 24"><path d="m5 16-1 4 4-1L19 8l-3-3Zm9-9 3 3"/></symbol>
+<symbol id="lock" viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3m-4 4v2"/></symbol>
+<symbol id="book" viewBox="0 0 24 24"><path d="M12 6C9 4 5 4 3 5v14c3-1 6-1 9 1 3-2 6-2 9-1V5c-2-1-6-1-9 1Zm0 0v14"/></symbol>
+<symbol id="arrow" viewBox="0 0 24 24"><path d="M4 12h15m-6-6 6 6-6 6"/></symbol>
+<symbol id="shuffle" viewBox="0 0 24 24"><path d="M3 7h3c4 0 7 10 11 10h4m-3-3 3 3-3 3M3 17h3c2 0 3-2 4-3m4-5c1-1 2-2 4-2h3m-3-3 3 3-3 3"/></symbol>
+<symbol id="copyIcon" viewBox="0 0 24 24"><rect x="8" y="8" width="11" height="13" rx="2"/><path d="M15 8V4H4v13h4"/></symbol>
+</defs></svg>
+<header><div class="wrap top"><div class="logo"><svg class="ic" style="width:30px;height:30px"><use href="#grid"/></svg></div><div class="brand">El poder secreto de las matrices<small>Mensajes cifrados, imágenes limpias y secretos visuales.</small></div><nav class="app-nav" aria-label="Navegación de la feria">
+  <a href="filtros-video.html">Filtros de video</a>
+  <a href="criptografia-visual.html">Criptografía visual</a>
+  <a class="deck-return" href="presentacion.html#descifrar">Presentación</a>
+</nav><div class="status" style="margin-left:0"><i></i>Modo local</div></div></header>
+<script>
+{
+  const originSlide=new URLSearchParams(location.search).get('desde');
+  if(originSlide && /^[a-z][a-z0-9-]*$/.test(originSlide)){
+    const nav=document.querySelector('.app-nav');
+    nav.querySelector('.deck-return').hash=originSlide;
+    for(const link of nav.querySelectorAll('a:not(.deck-return)')){
+      link.search=new URLSearchParams({desde:originSlide}).toString();
+    }
+  }
+}
+</script>
+
+<main class="wrap">
+<section class="hero"><div><div class="kicker">Demostración 01 / 03</div><h1><span id="heroAction" style="color:inherit">Cifrado</span> <span>matricial</span></h1><p id="heroHint">Convierte un mensaje en un código secreto con una matriz de 3 × 3. Explora qué ocurre con cada letra.</p></div>
+<svg class="art" viewBox="0 0 280 168" role="img" aria-labelledby="matrixTitle"><title id="matrixTitle">Matriz clave con filas 2, 1, 1 / 1, 3, 1 / 1, 1, 2</title>
+<g fill="none" stroke="#799667" stroke-width="1"><path opacity=".55" d="M5 59h27l17 17h24m-58 33h23l15-15h21m133-28h22l15-15h27m-64 47h20l17 17h21"/><g fill="#93b97d"><circle cx="5" cy="59" r="2"/><circle cx="15" cy="109" r="2"/><circle cx="271" cy="51" r="2"/><circle cx="265" cy="115" r="2"/></g></g>
+<rect x="79" y="18" width="123" height="127" rx="4" fill="#1b2c23" stroke="#4b644b"/><path d="M94 30h-7v101h7m93-101h7v101h-7" fill="none" stroke="#bded90" stroke-width="2"/>
+<g id="matrixCells" fill="#c6fa98" font-family="monospace" font-size="24" text-anchor="middle"><text x="109" y="55">2</text><text x="140" y="55">1</text><text x="171" y="55">1</text><text x="109" y="88">1</text><text x="140" y="88">3</text><text x="171" y="88">1</text><text x="109" y="121">1</text><text x="140" y="121">1</text><text x="171" y="121">2</text></g><text id="matrixCaption" x="140" y="161" text-anchor="middle" letter-spacing="2" font-family="monospace" font-size="9" fill="#b5c6ac">MATRIZ CLAVE</text></svg></section>
+<section aria-labelledby="lab"><div class="section-head"><div class="section-title"><span class="number">01</span><h2 id="lab">Laboratorio de cifrado</h2></div><button class="btn" id="openAlpha"><svg class="ic"><use href="#book"/></svg>Ver alfabeto</button></div>
+<div class="modes" role="group" aria-label="Operación"><button id="encodeMode" aria-pressed="true">Cifrar</button><button id="decodeMode" aria-pressed="false">Descifrar</button></div>
+<div class="cards"><div class="card"><div class="card-head"><span class="badge-icon"><svg class="ic"><use href="#write"/></svg></span><h3><label id="inputTitle" for="msg">Mensaje original</label></h3></div>
+<div class="field"><textarea id="msg" maxlength="300" spellcheck="false" aria-describedby="counter warning" placeholder="Escribe tu mensaje…">¡HOLA MUNDO!</textarea><div class="meta count" id="counter"></div></div>
+<div class="actions"><button class="btn primary" id="encrypt"><span id="actionText">Cifrar mensaje</span> <svg class="ic"><use href="#arrow"/></svg></button><button class="btn quiet" id="example"><svg class="ic"><use href="#shuffle"/></svg>Otro ejemplo</button></div><p class="warning" id="warning" role="status"></p></div>
+<div class="card out"><div class="card-head"><span class="badge-icon"><svg class="ic"><use href="#lock"/></svg></span><h3 id="outputTitle">Mensaje cifrado</h3></div>
+<div class="cipher-box"><div class="cipher" id="cipher"></div><div class="meta" id="cipherMeta"></div></div>
+<div class="actions"><button class="btn" id="copy"><svg class="ic"><use href="#copyIcon"/></svg><span>Copiar</span></button><button class="btn quiet" id="decrypt">Descifrar mensaje</button></div></div></div></section>
+<section class="explorer" aria-labelledby="explore"><div class="subhead"><div class="section-title"><span class="number">02</span><div><h2 id="explore">Explorador de bloques</h2><p id="exploreHint">Sigue el recorrido de tres símbolos a la vez.</p></div></div><div class="nav"><button class="iconbtn" id="prev" aria-label="Bloque anterior">←</button><span id="where"></span><button class="iconbtn" id="next" aria-label="Bloque siguiente">→</button></div></div>
+<div id="work"><div class="stages"><div class="stage"><div class="label"><b>01</b> Entrada</div><div class="tokens" id="inputTokens"></div><div class="math" id="inputNums"></div></div>
+<div class="stage"><div class="label"><b>02</b> Multiplicación</div><div class="formula" id="formula">K × vector</div><div class="math" id="products"></div></div>
+<div class="stage"><div class="label"><b>03</b> Salida · módulo 33</div><div class="tokens out-tokens" id="outputTokens"></div><div class="math" id="outputNums"></div></div></div>
+<details><summary>Ver el cálculo paso a paso</summary><p id="explanation">Cada fila de la matriz se multiplica por el vector de entrada. Sumamos los tres productos y tomamos el residuo al dividir entre 33. Ese número indica el símbolo de salida en el alfabeto.</p><pre id="calc"></pre><p id="pad"></p></details></div></section>
+<div id="announce" class="sr" role="status"></div></main>
+<dialog id="alpha" aria-labelledby="alphaTitle"><div class="section-head"><h2 id="alphaTitle">Alfabeto de cifrado</h2><button class="iconbtn" id="closeAlpha" aria-label="Cerrar">✕</button></div><p>Los 33 símbolos se numeran del 0 al 32. El signo ␣ representa un espacio. Las minúsculas pasan a mayúsculas y las vocales con acento o diéresis se escriben sin marca.</p><div class="alphabet" id="symbols"></div></dialog>
+<script>
+'use strict';
+const alphabet = 'ABCDEFGHIJKLMNÑOPQRSTUVWXYZ¿?¡! .';
+const key = [[2,1,1],[1,3,1],[1,1,2]];
+// Inversa modular: adjunta(K) multiplicada por 19, inverso de det(K) = 7 módulo 33.
+const inverse = [[29,14,28],[14,24,14],[28,14,29]];
+const examples = ['¡HOLA MUNDO!', '¿QUÉ ESCONDE LA MATRIZ?', 'EL SECRETO ESTÁ EN LA Ñ.', '¡VIVA LA FERIA!'];
+const el = id => document.getElementById(id);
+const visible = char => char === ' ' ? '␣' : char;
+const normalize = value => value.normalize('NFC').replace(/[a-záéíóúüñ]/g, c => c.toUpperCase()).replace(/[ÁÉÍÓÚÜ]/g,c => ({Á:'A',É:'E',Í:'I',Ó:'O',Ú:'U',Ü:'U'})[c]);
+const multiply = (matrix, vector) => matrix.map(row => row.reduce((sum, n, i) => sum + n * vector[i], 0));
+const modulo = n => n % alphabet.length;
+let blocks = [], selected = 0, padding = 0, exampleIndex = 0;
+function makeBlock(chars, matrix) {
+  const vector = Array.from(chars, c => alphabet.indexOf(c));
+  const product = multiply(matrix, vector);
+  const residues = product.map(modulo);
+  return {chars, vector, product, residues, output: residues.map(n => alphabet[n]).join('')};
+}
+function tokens(id, chars) {
+  el(id).replaceChildren(...Array.from(chars, char => {
+    const span = document.createElement('span');
+    span.className = 'token';
+    span.textContent = visible(char);
+    return span;
+  }));
+}
+function updateExplorer() {
+  const block = blocks[selected];
+  el('work').hidden = !block;
+  el('prev').disabled = !block || selected === 0;
+  el('next').disabled = !block || selected === blocks.length - 1;
+  el('where').textContent = block ? `Bloque ${selected + 1} de ${blocks.length}` : 'Sin bloques';
+  if (!block) return;
+  tokens('inputTokens', block.chars);
+  tokens('outputTokens', block.output);
+  el('inputNums').textContent = 'Vector [' + block.vector.join(', ') + ']';
+  el('products').textContent = 'Producto [' + block.product.join(', ') + ']';
+  el('outputNums').textContent = 'Residuos [' + block.residues.join(', ') + ']';
+  el('calc').textContent = activeMatrix().map((row,i) => row.map((n,j) => n+'×'+block.vector[j]).join(' + ') + ' = ' + block.product[i] + ' ≡ ' + block.residues[i] + ' (mod 33)' + ' → ' + visible(block.output[i])).join('\n');
+  el('pad').textContent = '';
+  if (selected === blocks.length - 1 && padding) {
+    el('pad').textContent = decoding
+      ? `Al reconstruir el mensaje retiramos el relleno conocido del último bloque: ${'X'.repeat(padding)}.`
+      : `Completamos este bloque con ${padding} símbolo(s) X de relleno.`;
+  }
+}
+
+let decoding = false;
+const drafts = new Map();
+const activeMatrix = () => decoding ? inverse : key;
+const joinedOutput = () => blocks.map(block => block.output).join('');
+const recoveredText = () => {
+  const text = joinedOutput();
+  return text.slice(0, text.length - padding);
+};
+
+function checkInput() {
+  const normalized = normalize(el('msg').value);
+  const value = decoding ? normalized.replaceAll('␣', ' ') : normalized;
+  const invalid = [...new Set(Array.from(value).filter(c => !alphabet.includes(c)))];
+  const names = invalid.map(c => c === '\n' ? 'salto de línea' : '«'+c+'»').join(', ');
+  let warning = '';
+  if (invalid.length) warning = 'Fuera del alfabeto: '+names+'. Sustituye esos símbolos.';
+  else if (decoding && value.length % 3) warning = 'El cifrado necesita bloques completos de tres símbolos. Revisa las letras y los espacios.';
+  el('counter').textContent = Array.from(el('msg').value).length + ' / 300';
+  el('warning').textContent = warning;
+  el('warning').hidden = !warning;
+  el('msg').setAttribute('aria-invalid', String(Boolean(warning)));
+  el('encrypt').disabled = !value.length || Boolean(warning);
+  return value;
+}
+
+function renderResult() {
+  const available = blocks.length > 0;
+  el('cipher').replaceChildren();
+  if (!available) el('cipher').textContent = '—';
+  else if (decoding) el('cipher').textContent = recoveredText();
+  else {
+    for (const block of blocks) {
+      const chunk = document.createElement('span');
+      chunk.className = 'cipher-chunk';
+      chunk.textContent = Array.from(block.output, visible).join('');
+      el('cipher').append(chunk);
+    }
+  }
+  let meta = decoding ? 'Descifra un mensaje para ver el resultado.' : 'Cifra el mensaje para ver el resultado.';
+  if (available) {
+    meta = blocks.length + (blocks.length === 1 ? ' bloque' : ' bloques') + ' de 3 · módulo 33';
+    if (padding) meta += (decoding ? ' · relleno retirado: ' : ' · relleno: ') + 'X'.repeat(padding);
+    if (decoding && !padding && recoveredText().endsWith('X')) meta += ' · Se conservan las X finales porque pueden pertenecer al mensaje.';
+  }
+  el('cipherMeta').textContent = meta;
+  el('copy').disabled = !available;
+  el('decrypt').hidden = decoding;
+  el('decrypt').disabled = !available;
+  el('copy').querySelector('span').textContent = 'Copiar';
+  updateExplorer();
+}
+
+function transform() {
+  const value = checkInput();
+  if (el('encrypt').disabled) return;
+  if (!decoding) padding = (3 - value.length % 3) % 3;
+  const input = decoding ? value : value + 'X'.repeat(padding);
+  blocks = input.match(/.{3}/g).map(chars => makeBlock(chars, activeMatrix()));
+  selected = 0;
+  renderResult();
+  el('announce').textContent = (decoding ? 'Mensaje recuperado: '+recoveredText() : 'Mensaje cifrado en '+blocks.length+' bloques.');
+}
+
+function switchMode(toDecode, useOutput = false) {
+  if (decoding === toDecode) return;
+  drafts.set(decoding, {value: el('msg').value, blocks, padding, selected});
+  let draft = drafts.get(toDecode);
+  const transfer = toDecode && blocks.length && (useOutput || !draft);
+  if (transfer) draft = {value: joinedOutput(), padding, blocks: [], selected: 0};
+  decoding = toDecode;
+  el('msg').value = draft?.value ?? '';
+  padding = draft?.padding ?? 0;
+  selected = draft?.selected ?? 0;
+  blocks = draft?.blocks ?? [];
+  const action = decoding ? 'Descifrar' : 'Cifrar';
+  const name = decoding ? 'Descifrado' : 'Cifrado';
+  el('encodeMode').setAttribute('aria-pressed', String(!decoding));
+  el('decodeMode').setAttribute('aria-pressed', String(decoding));
+  el('heroAction').textContent = name;
+  el('lab').textContent = 'Laboratorio de '+name.toLowerCase();
+  el('heroHint').textContent = decoding ? 'Recupera el mensaje con la matriz inversa módulo 33. Cada bloque de tres símbolos te devuelve tres letras o signos del mensaje original.' : 'Convierte un mensaje en un código secreto con una matriz de 3 × 3. Explora qué ocurre con cada letra.';
+  el('inputTitle').textContent = decoding ? 'Mensaje cifrado' : 'Mensaje original';
+  el('outputTitle').textContent = decoding ? 'Mensaje recuperado' : 'Mensaje cifrado';
+  el('msg').placeholder = decoding ? 'Pega aquí el mensaje cifrado…' : 'Escribe tu mensaje…';
+  el('actionText').textContent = action+' mensaje';
+  el('formula').textContent = decoding ? 'K⁻¹ × vector cifrado' : 'K × vector';
+  el('exploreHint').textContent = decoding ? 'Del bloque cifrado a los símbolos originales.' : 'Sigue el recorrido de tres símbolos a la vez.';
+  el('explanation').textContent = decoding ? 'K⁻¹ deshace el cifrado porque K⁻¹ × K da la matriz identidad al tomar los residuos módulo 33. Multiplica cada fila de K⁻¹ por el vector cifrado y busca el residuo en el alfabeto para recuperar el símbolo original.' : 'Cada fila de la matriz se multiplica por el vector de entrada. Sumamos los tres productos y tomamos el residuo al dividir entre 33. Ese número indica el símbolo de salida en el alfabeto.';
+  const matrix = activeMatrix();
+  const caption = decoding ? 'Matriz inversa' : 'Matriz clave';
+  el('matrixCaption').textContent = caption.toUpperCase();
+  el('matrixTitle').textContent = caption+' con filas '+matrix.map(row => row.join(', ')).join(' / ');
+  const cells = el('matrixCells').querySelectorAll('text');
+  matrix.flat().forEach((n,i) => cells[i].textContent = n);
+  if (transfer) transform();
+  else { checkInput(); renderResult(); }
+}
+
+el('msg').oninput = () => { checkInput(); blocks = []; padding = 0; selected = 0; renderResult(); };
+el('encrypt').onclick = transform;
+el('encodeMode').onclick = () => switchMode(false);
+el('decodeMode').onclick = () => switchMode(true);
+el('decrypt').onclick = () => { switchMode(true, true); el('decodeMode').focus(); };
+el('example').onclick = () => {
+  exampleIndex = (exampleIndex + 1) % examples.length;
+  let value = examples[exampleIndex];
+  if (decoding) {
+    value = normalize(value);
+    padding = (3 - value.length % 3) % 3;
+    value = (value+'X'.repeat(padding)).match(/.{3}/g).map(chars => makeBlock(chars,key).output).join('');
+  }
+  el('msg').value = value;
+  transform();
+};
+el('prev').onclick = () => { selected--; updateExplorer(); };
+el('next').onclick = () => { selected++; updateExplorer(); };
+el('copy').onclick = async () => {
+  const raw = decoding ? recoveredText() : joinedOutput();
+  let copied = false;
+  try { await navigator.clipboard.writeText(raw); copied = true; } catch {
+    const tmp = document.createElement('textarea');
+    tmp.value = raw; tmp.style.position = 'fixed'; tmp.style.opacity = '0'; document.body.append(tmp); tmp.select();
+    try { copied = document.execCommand('copy'); } finally { tmp.remove(); el('copy').focus(); }
+  }
+  el('copy').querySelector('span').textContent = copied ? 'Copiado' : 'Copiar';
+  if (!copied) window.prompt('Copia el mensaje con el teclado:',raw);
+  el('announce').textContent = copied ? 'Mensaje copiado.' : '';
+};
+Array.from(alphabet).forEach((char,i) => { const cell = document.createElement('div'); const num = document.createElement('small'); num.textContent = i; cell.append(visible(char),num); el('symbols').append(cell); });
+el('openAlpha').onclick = () => el('alpha').showModal();
+el('closeAlpha').onclick = () => el('alpha').close();
+transform();
+</script>
+</body>
+</html>
